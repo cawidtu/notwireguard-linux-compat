@@ -18,7 +18,13 @@
 #include <linux/net.h>
 #include <linux/ptr_ring.h>
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,4,10)
+#include <net/gso.h>
+#endif
+
 struct wg_device;
+
+
 
 struct multicore_worker {
 	void *ptr;
